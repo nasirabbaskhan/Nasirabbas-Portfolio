@@ -1,3 +1,8 @@
+import {
+  CodeBracketSquareIcon,
+  CommandLineIcon,
+  RocketLaunchIcon,
+} from "@heroicons/react/20/solid";
 import React from "react";
 
 export default function Services() {
@@ -14,8 +19,7 @@ export default function Services() {
         {/* 1st block */}
         <div>
           <div className="bg-red-700 hover:scale-110 transform transition-all duration-300 hover:-rotate-6 uppercase font-semibold text-center p-[2rem]">
-            <p>codeBracketSquareIcon</p>
-            {/* <codeBracketSquareIcon className="w-[6rem] h-[6rem] mx-auto text-[#d3fae8] "/> */}
+            <CodeBracketSquareIcon className="w-[6rem] h-[6rem] mx-auto text-[#d3fae8] " />
             <h1 className="text-[20px] md:text-[25px] mt-[1.5rem] mb-[.5rem]">
               frontend
             </h1>
@@ -29,8 +33,7 @@ export default function Services() {
         {/* 2nd block */}
         <div>
           <div className="bg-orange-700 hover:scale-110 transform transition-all duration-300  uppercase font-semibold text-center p-[2rem]">
-            <p>codeBracketSquareIcon</p>
-            {/* <codeBracketSquareIcon className="w-[6rem] h-[6rem] mx-auto text-[#d3fae8] "/> */}
+            <RocketLaunchIcon className="w-[6rem] h-[6rem] mx-auto text-[#d3fae8] " />
             <h1 className="text-[20px] md:text-[25px] mt-[1.5rem] mb-[.5rem]">
               Backend
             </h1>
@@ -44,8 +47,7 @@ export default function Services() {
         {/* 3rd block */}
         <div>
           <div className="bg-blue-700 hover:scale-110 transform transition-all duration-300 hover:rotate-6 uppercase font-semibold text-center p-[2rem]">
-            <p>codeBracketSquareIcon</p>
-            {/* <codeBracketSquareIcon className="w-[6rem] h-[6rem] mx-auto text-[#d3fae8] "/> */}
+            <CommandLineIcon className="w-[6rem] h-[6rem] mx-auto text-[#d3fae8] " />
             <h1 className="text-[20px] md:text-[25px] mt-[1.5rem] mb-[.5rem]">
               Fullstack
             </h1>

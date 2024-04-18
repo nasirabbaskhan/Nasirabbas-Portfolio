@@ -1,3 +1,4 @@
+import Testamon from "@/components/Testmon";
 import About from "@/components/Views/About";
 import Blog from "@/components/Views/Blog";
 import Hero from "@/components/Views/Hero";

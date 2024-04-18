@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "../Button";
 import Image from "next/image";
+import { PhoneArrowDownLeftIcon } from "@heroicons/react/16/solid";
 
 export default function About() {
   return (
-    <div className="bg-[#121121] pb-[5rem] pt-[3rem] md:pt-[6rem]">
+    <div className="bg-[#121121] pb-[5rem] pt-[3rem] md:pt-[6rem] ">
       <div className="grid grid-cols-1 md:grid-cols-2 w-[80%] mx-auto gap-[3rem] items-center justify-center">
         <div className="">
           <h1 className="text-[20px] font-bold uppercase text-[#55e6a5] mb-[1rem]">
@@ -21,11 +22,19 @@ export default function About() {
               culpa natus ut?
             </p>
           </div>
-          <Button />
+          <div className="flex flex-col lg:flex-row md:gap-5 ">
+            <div className="mt-[2rem] flex-col space-y-6 sm:space-y-0 sm:flex sm:flex-row items-center sm:space-x-6">
+              <Button />
+            </div>
+            <div className=" mt-[2rem] lg:w-[40%] md:w-[70%] w-[60%] cursor-pointer px-[1rem] sm:w-[42%] hover:bg-yellow-400 transition-all duration-200 py-[1rem] md:text-[16px] text-[10px] font-bold uppercase bg-[#55e6a5] text-black flex items-center space-x-4    ">
+              <PhoneArrowDownLeftIcon className="w-[1.6rem] h-[1.7rem] text-black" />
+              <p className="sm:text-[15px]">+92325108019 </p>
+            </div>
+          </div>
         </div>
         <div className="lg:w-[500px] mx-auto md:mx-0 mt-[2rem] lg:mt-0 lg:h-[500px] sm:w-[300px] sm:h-[300px] w-[200px] h-[200px] relative">
           <Image
-            src={"/images/about.png"}
+            src={"/images/about.jpg"}
             alt="user"
             width={1000}
             height={1000}

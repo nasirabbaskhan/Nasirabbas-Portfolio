@@ -20,11 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="{inter.className} font-primary">
-        <Wrapper>
-          <Header />
-          {children}
-          <Footer />
-        </Wrapper>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

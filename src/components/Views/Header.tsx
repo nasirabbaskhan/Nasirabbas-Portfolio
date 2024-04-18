@@ -14,7 +14,7 @@ export default function Header() {
   };
   return (
     <>
-      <div className="bg-[#141c27] flex content-center justify-between py-5 px-6 shadow-md ">
+      <div className="bg-[#141c27] flex sticky top-0 z-[1000] content-center justify-between py-5 px-6 shadow-md ">
         <div className="left">
           <h1 className="flex-[0.6] text-[20px] cursor-pointer font-bold text-white">
             WEB <span className="text-yellow-400">DEV</span>

@@ -14,21 +14,42 @@ export default function Blog() {
           comments={2}
           commentator="Sajal"
           topic="Nextjs FullStack Development"
-          image="/images/an.jpg"
+          image="/images/blog1.jpeg"
         />
         <BlogItem
           date="December 15, 2023"
           comments={8}
           commentator="Talukder"
           topic="React New Fetures"
-          image="/images/an.jpg"
+          image="/images/blog2.jpeg"
         />
         <BlogItem
           date="December 20, 2023"
           comments={9}
           commentator="Anasl"
           topic="NextJs New Fetures"
-          image="/images/an.jpg"
+          image="/images/blog3.jpg"
+        />
+        <BlogItem
+          date="December 24, 2023"
+          comments={14}
+          commentator="Dhoni"
+          topic="Routing in NextJs"
+          image="/images/blog4.jpeg"
+        />
+        <BlogItem
+          date="December 26, 2023"
+          comments={12}
+          commentator="Agrwal"
+          topic="SEO in NextJs"
+          image="/images/blog5.jpg"
+        />
+        <BlogItem
+          date="December 28, 2023"
+          comments={10}
+          commentator="Jaswal"
+          topic="NextJs First App"
+          image="/images/blog6.jpg"
         />
       </div>
     </div>
