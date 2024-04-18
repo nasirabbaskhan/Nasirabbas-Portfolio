@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="w-[80%]  grid-cols-1 mx-auto grid md:grid-cols-2 gap-[3rem] h-[100%] items-center ">
         <div className="z-[100]">
           <h1 className="text-[35px] md:text-[40px] uppercase  text-white font-bold">
-            Hi I'M <span className="text-yellow-400">Nasir Abbas</span>
+            Hi I&apos;M <span className="text-yellow-400">Nasir Abbas</span>
           </h1>
           <TextEffect />
           <p className="text-[#ffffff92] text-[20px] pt-[2rem]">
