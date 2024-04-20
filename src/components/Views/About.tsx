@@ -29,8 +29,8 @@ export default async function About() {
           <div className="mb-[3rem] flex items-center md:space-x-10">
             <span className="w-[100px] h-[5px] hidden md:block bg-slate-400 rounded-sm"></span>
             <p className="text-[19px] text-slate-300 w-[80%]">
-              {data.map((item: any) => {
-                return <>{item.Introduction}</>;
+              {data.map((item, index) => {
+                return <span key={index}>{item.introduction}</span>;
               })}
             </p>
           </div>
@@ -41,8 +41,8 @@ export default async function About() {
             <div className=" mt-[2rem] lg:w-[40%] md:w-[70%] w-[60%] cursor-pointer px-[1rem] sm:w-[42%] hover:bg-yellow-400 transition-all duration-200 py-[1rem] md:text-[16px] text-[10px] font-bold uppercase bg-[#55e6a5] text-black flex items-center space-x-4    ">
               <PhoneArrowDownLeftIcon className="w-[1.6rem] h-[1.7rem] text-black" />
               <p className="sm:text-[15px]">
-                {data.map((item: any) => {
-                  return <>{item.phoneNumber}</>;
+                {data.map((item, index) => {
+                  return <span key={index}>{item.phoneNumber}</span>;
                 })}{" "}
               </p>
             </div>

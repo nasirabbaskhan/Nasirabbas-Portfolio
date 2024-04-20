@@ -1,4 +1,3 @@
-import Checking from "@/components/Checking";
 import About from "@/components/Views/About";
 import Blog from "@/components/Views/Blog";
 import Footer from "@/components/Views/Footer";
@@ -16,7 +15,7 @@ export default function Home() {
       </div>
       <div className="relative z-[30]">
         <About />
-        <Checking />
+
         <Services />
         <Skills />
         <Projects />

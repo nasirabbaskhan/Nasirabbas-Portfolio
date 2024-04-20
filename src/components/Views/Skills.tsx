@@ -40,9 +40,9 @@ export default async function Skills() {
             </div>
           );
         })}
-        {result.map((item) => {
+        {result.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               <SkilsLanguage skill={item.skill} level={`w-[${item.level}]`} />
             </div>
           );
