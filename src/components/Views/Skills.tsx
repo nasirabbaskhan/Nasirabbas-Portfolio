@@ -1,38 +1,52 @@
-import React from "react";
+import { EducationType, SkillsType } from "@/lib/type";
+import { client } from "../../../sanity/lib/client";
 import SkillsItem from "../SkillsItem";
 import SkilsLanguage from "../SkilsLanguage";
+const fetchingEducationData = async () => {
+  const res = await client.fetch(
+    `*[_type=="education"]{year,title,description}`,
+    {},
+    { cache: "no-cache" }
+  );
+  return res;
+};
 
-export default function Skills() {
+const fetchingData = async () => {
+  const res = await client.fetch(
+    `*[_type=="skills"]{skill,level}`,
+    {},
+    { cache: "no-cache" }
+  );
+  return res;
+};
+
+export default async function Skills() {
+  const data: EducationType[] = await fetchingEducationData();
+  const result: SkillsType[] = await fetchingData();
   return (
     <div className="pt-[4rem] md:pt-[8rem] pb-[5rem] bg-[#09101a]">
       <h1 className="heading">
         Education & <span className="text-yellow-400 ">Skills</span>
       </h1>
       <div className="w-[80%] mx-auto pt-[4rem] md:pt-[8rem] grid grid-cols-1 md:grid-cols-2 gap-[2rem] items-center ">
-        <div>
-          <SkillsItem title="React Devaloper" year="2014-2018" />
-          <SkillsItem title="MERN Stack Devaloper" year="2016-2020" />
-          <SkilsLanguage
-            skill1="html"
-            skill2="CSS"
-            skill3="JavaScript"
-            level1="w-[91%]"
-            level2="w-[88%]"
-            level3="w-[80%]"
-          />
-        </div>
-        <div>
-          <SkillsItem title="Next JS Devaloper" year="2018-2021" />
-          <SkillsItem title="Node js Devaloper" year="2021-2023" />
-          <SkilsLanguage
-            skill1="React Js"
-            skill2="Next Js"
-            skill3="TypeScript"
-            level1="w-[85%]"
-            level2="w-[81%]"
-            level3="w-[80%]"
-          />
-        </div>
+        {data.map((item, index) => {
+          return (
+            <div key={index}>
+              <SkillsItem
+                title={item.title}
+                year={item.year}
+                description={item.description}
+              />
+            </div>
+          );
+        })}
+        {result.map((item) => {
+          return (
+            <div>
+              <SkilsLanguage skill={item.skill} level={`w-[${item.level}]`} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

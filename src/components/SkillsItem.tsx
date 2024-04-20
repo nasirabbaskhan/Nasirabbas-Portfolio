@@ -1,11 +1,12 @@
 interface Props {
   title: string;
   year: string;
+  description: string;
 }
 
-export default function SkillsItem({ title, year }: Props) {
+export default function SkillsItem({ title, year, description }: Props) {
   return (
-    <div className="mb-[4rem] md:mb-[8rem] bg-slate-600 px-10 py-4  border-[2px] border-[#55e6a5] ">
+    <div className="mb-[4rem] md:mb-[8rem] bg-slate-600 px-10 py-6  border-[2px] border-[#55e6a5] ">
       <span className="px-[2rem] text-[#55e6a5] py-[0.9rem ] font-bold text-[18px] border-[2px] border-[#55e6a5]">
         {year}
       </span>
@@ -13,10 +14,7 @@ export default function SkillsItem({ title, year }: Props) {
         {title}
       </h1>
       <p className="text-[#aaaaaa] font-normal w-[95%] text-[17px] opacity-80">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quam unde
-        soluta molestiae ipsum autem. Officia sunt aliquam minus ea quia
-        adipisci impedit sapiente a explicabo. Tempora tempore incidunt
-        cupiditate?
+        {description}
       </p>
     </div>
   );

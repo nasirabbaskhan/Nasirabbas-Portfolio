@@ -1,9 +1,21 @@
-import React from "react";
 import Button from "../Button";
 import Image from "next/image";
 import { PhoneArrowDownLeftIcon } from "@heroicons/react/16/solid";
+import { client } from "../../../sanity/lib/client";
+import { AboutType } from "@/lib/type";
+import { urlForImage } from "../../../sanity/lib/image";
 
-export default function About() {
+const fetchingData = async () => {
+  const res = await client.fetch(
+    `*[_type=="about"]{image,phoneNumber,Introduction}`,
+    {},
+    { cache: "no-cache" }
+  );
+  return res;
+};
+
+export default async function About() {
+  const data: AboutType[] = await fetchingData();
   return (
     <div className="bg-[#121121] pb-[5rem] pt-[3rem] md:pt-[6rem] ">
       <div className="grid grid-cols-1 md:grid-cols-2 w-[80%] mx-auto gap-[3rem] items-center justify-center">
@@ -17,9 +29,9 @@ export default function About() {
           <div className="mb-[3rem] flex items-center md:space-x-10">
             <span className="w-[100px] h-[5px] hidden md:block bg-slate-400 rounded-sm"></span>
             <p className="text-[19px] text-slate-300 w-[80%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam id
-              animi ab! Similique quasi assumenda voluptas, amet non recusandae
-              culpa natus ut?
+              {data.map((item: any) => {
+                return <>{item.Introduction}</>;
+              })}
             </p>
           </div>
           <div className="flex flex-col lg:flex-row md:gap-5 ">
@@ -28,19 +40,37 @@ export default function About() {
             </div>
             <div className=" mt-[2rem] lg:w-[40%] md:w-[70%] w-[60%] cursor-pointer px-[1rem] sm:w-[42%] hover:bg-yellow-400 transition-all duration-200 py-[1rem] md:text-[16px] text-[10px] font-bold uppercase bg-[#55e6a5] text-black flex items-center space-x-4    ">
               <PhoneArrowDownLeftIcon className="w-[1.6rem] h-[1.7rem] text-black" />
-              <p className="sm:text-[15px]">+92325108019 </p>
+              <p className="sm:text-[15px]">
+                {data.map((item: any) => {
+                  return <>{item.phoneNumber}</>;
+                })}{" "}
+              </p>
             </div>
           </div>
         </div>
         <div className="lg:w-[500px] mx-auto md:mx-0 mt-[2rem] lg:mt-0 lg:h-[500px] sm:w-[300px] sm:h-[300px] w-[200px] h-[200px] relative">
-          <Image
+          {data.map((item, index) => {
+            return (
+              <span key={index}>
+                <Image
+                  src={urlForImage(item.image)}
+                  width={1000}
+                  height={1000}
+                  alt="user"
+                  objectFit="contain"
+                  className="relative z-[11] "
+                />
+              </span>
+            );
+          })}
+          {/* <Image
             src={"/images/about.jpg"}
             alt="user"
             width={1000}
             height={1000}
             objectFit="contain"
             className="relative z-[11] "
-          />
+          /> */}
           <div className="absolute w-[100%] h-[100%] z-[10] bg-[#55e6a5] sm:top-[-2rem] sm:right-[-2rem] top-[-1rem] right-[-1rem]"></div>
         </div>
       </div>

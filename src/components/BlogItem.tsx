@@ -15,14 +15,8 @@ export default function BlogItem({
 }: Props) {
   return (
     <div>
-      <div className="relative  ">
-        <Image
-          src={image}
-          width={1000}
-          height={1000}
-          alt="user"
-          className="object-cover"
-        />
+      <div className="w-[100%] relative h-[300px] ">
+        <Image src={image} layout="fill" alt="user" className="object-cover" />
       </div>
       <div className="w-[90%] text-center mx-auto bg-[#09101a] relative p-[2rem] mt-[-1rem]   ">
         <div className="w-fit px-[2rem] py-[1rem] bg-[#55e6a5] relative mt-[-3rem ] text-black font-semibold text-[14px] mx-auto ">

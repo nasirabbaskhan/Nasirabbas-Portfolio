@@ -22,7 +22,6 @@ export default function RootLayout({
       <body className="{inter.className} font-primary">
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
