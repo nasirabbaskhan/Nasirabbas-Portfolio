@@ -3,6 +3,7 @@ import Image from "next/image";
 import MobileNavbar from "../MobileNavbar";
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/16/solid";
+import Link from "next/link";
 
 export default function Header() {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
@@ -22,12 +23,25 @@ export default function Header() {
         </div>
         <div className="right ">
           <ul className="flex justify-end content-center gap-7">
-            <li className="nav-link ">HOME</li>
-            <li className="nav-link ">SERVICES</li>
-            <li className="nav-link">ABOUT</li>
-            <li className="nav-link">PROJECT</li>
-            <li className="nav-link">CONTECT</li>
-            <li className="nav-link">BLOG</li>
+            <li className="nav-link ">
+              <Link href={"/"}>HOME</Link>
+            </li>
+
+            <li className="nav-link">
+              <Link href={"service"}>SERVICES</Link>
+            </li>
+            <li className="nav-link">
+              <Link href={"about"}>ABOUT</Link>
+            </li>
+            <li className="nav-link">
+              <Link href={"project"}>PROJECT</Link>
+            </li>
+            <li className="nav-link">
+              <Link href={"contect"}>CONTECT</Link>
+            </li>
+            <li className="nav-link">
+              <Link href={"blog"}>BLOG</Link>
+            </li>
           </ul>
         </div>
         {/* mobile Navbar */}

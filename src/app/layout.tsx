@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Wrapper from "@/components/Wrapper";
 import Header from "@/components/Views/Header";
-import Footer from "@/components/Views/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +21,7 @@ export default function RootLayout({
       <body className="{inter.className} font-primary">
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );

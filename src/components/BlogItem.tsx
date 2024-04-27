@@ -1,10 +1,13 @@
+import * as sanity from "sanity";
+import { urlForImage } from "../../sanity/lib/image";
 import Image from "next/image";
+
 interface Props {
   date: string;
   comments: number;
   commentator: string;
   topic: string;
-  image: string;
+  image: sanity.Image;
 }
 export default function BlogItem({
   date,
@@ -16,7 +19,12 @@ export default function BlogItem({
   return (
     <div>
       <div className="w-[100%] relative h-[300px] ">
-        <Image src={image} layout="fill" alt="user" className="object-cover" />
+        <Image
+          src={urlForImage(image)}
+          layout="fill"
+          alt="user"
+          className="object-cover"
+        />
       </div>
       <div className="w-[90%] text-center mx-auto bg-[#09101a] relative p-[2rem] mt-[-1rem]   ">
         <div className="w-fit px-[2rem] py-[1rem] bg-[#55e6a5] relative mt-[-3rem ] text-black font-semibold text-[14px] mx-auto ">
