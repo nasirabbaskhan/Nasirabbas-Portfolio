@@ -18,7 +18,7 @@ export default function Hero() {
           <TextEffectHelper />
 
           <p className="text-[#ffffff92] text-[20px] pt-[2rem]">
-            Hey nasir there, I'm Nasir Abbas – your Next.js web development
+            Hey nasir there, I&apos;m Nasir Abbas – your Next.js web development
             aficionado! 🚀 Passionate about pushing the boundaries of web
             technology, I specialize in crafting dynamic, high-performance
             websites and applications using Next.js.

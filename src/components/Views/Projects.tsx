@@ -22,8 +22,8 @@ export default async function Projects() {
         pro <span className="text-yellow-400">jects</span>{" "}
       </h1>
       <div className="w-[80%] pt-[0.5rem] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem] ">
-        {data.map((item: any) => {
-          return <ProjectItem image={urlForImage(item.image)} />;
+        {data.map((item: any, index) => {
+          return <ProjectItem key={index} image={urlForImage(item.image)} />;
         })}
       </div>
     </div>
